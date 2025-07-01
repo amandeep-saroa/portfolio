@@ -76,6 +76,113 @@ p {
   color: var(--c-content);
 }
 
+
+/* Optimized Firefly Animation Styles - Compatible with Wing HTML */
+.firefly-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.wing {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--c-action);
+  border-radius: 50%;
+  opacity: 0.8;
+  left: calc(var(--w) * 4%);
+  top: calc(20% + var(--w) * 2.5%);
+  animation: wingMove 15s infinite linear;
+  animation-delay: calc(var(--w) * 0.5s);
+  box-shadow: 0 0 6px var(--c-action), 0 0 12px var(--c-action);
+}
+
+.wing::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  animation: wingGlow 2s infinite alternate ease-in-out;
+}
+
+/* Hide all the nested i elements */
+.wing i {
+  display: none;
+}
+
+@keyframes wingMove {
+  0% {
+    transform: translateX(-50px) translateY(20px) scale(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-30px) scale(1.1);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-60px) scale(0.9);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-30px) scale(1.2);
+  }
+  95% {
+    opacity: 0.8;
+    transform: translateX(100vw) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(calc(100vw + 50px)) translateY(20px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes wingGlow {
+  0% {
+    box-shadow: 0 0 4px var(--c-action), 0 0 8px var(--c-action);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 8px var(--c-action), 0 0 16px var(--c-action);
+    transform: scale(1.3);
+  }
+}
+
+/* Individual variations for different --w values */
+.wing[style*="--w: 0"] { animation-duration: 12s; }
+.wing[style*="--w: 1"] { animation-duration: 14s; }
+.wing[style*="--w: 2"] { animation-duration: 16s; }
+.wing[style*="--w: 3"] { animation-duration: 13s; }
+.wing[style*="--w: 4"] { animation-duration: 18s; }
+.wing[style*="--w: 5"] { animation-duration: 15s; }
+.wing[style*="--w: 6"] { animation-duration: 11s; }
+.wing[style*="--w: 7"] { animation-duration: 17s; }
+.wing[style*="--w: 8"] { animation-duration: 14s; }
+.wing[style*="--w: 9"] { animation-duration: 12s; }
+.wing[style*="--w: 10"] { animation-duration: 16s; }
+.wing[style*="--w: 11"] { animation-duration: 13s; }
+.wing[style*="--w: 12"] { animation-duration: 19s; }
+.wing[style*="--w: 13"] { animation-duration: 15s; }
+.wing[style*="--w: 14"] { animation-duration: 11s; }
+.wing[style*="--w: 15"] { animation-duration: 17s; }
+.wing[style*="--w: 16"] { animation-duration: 14s; }
+.wing[style*="--w: 17"] { animation-duration: 12s; }
+.wing[style*="--w: 18"] { animation-duration: 16s; }
+.wing[style*="--w: 19"] { animation-duration: 13s; }
+.wing[style*="--w: 20"] { animation-duration: 18s; }
+.wing[style*="--w: 21"] { animation-duration: 15s; }
+.wing[style*="--w: 22"] { animation-duration: 11s; }
+.wing[style*="--w: 23"] { animation-duration: 17s; }
+
 /* Transitions */
 a, .btn {
   transition: all 300ms ease;
