@@ -498,17 +498,17 @@ footer p {
 .switcher {
   position: fixed;
   z-index: 1000;
-  top: 40px;
+  bottom: 68px;
   left: 50%;
-  translate: -50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: 8px;
-  width: 200px;
-  max-width: 200px;
-  height: 50px;
+  gap: 4px;
+  width: 140px;
+  max-width: 140px;
+  height: 40px;
   box-sizing: border-box;
-  padding: 8px 12px 10px;
+  padding: 4px 6px 4px;
   margin: 0 auto;
   border: none;
   border-radius: 99em;
@@ -635,11 +635,11 @@ footer p {
 .switcher::after {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 4px;
+  left: 2px;
+  top: 2px;
   display: block;
-  width: 84px;
-  height: calc(100% - 10px);
+  width: 44px;
+  height: calc(100% - 4px);
   border-radius: 99em;
   background-color: color-mix(in srgb, var(--c-glass) 36%, transparent);
   z-index: -1;
@@ -676,7 +676,7 @@ footer p {
 }
 
 .switcher:has(input[c-option="1"]:checked)::after {
-  translate: 0 0;
+  translate: 15px 0;
   transform-origin: right;
   transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1),
     box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
@@ -685,7 +685,7 @@ footer p {
 }
 
 .switcher:has(input[c-option="2"]:checked)::after {
-  translate: 76px 0;
+  translate: 86px;
   transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1),
     box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
     translate 400ms cubic-bezier(1, 0, 0.4, 1);
@@ -701,7 +701,7 @@ footer p {
 }
 
 .switcher:has(input[c-option="3"]:checked)::after {
-  translate: 152px 0;
+  translate: 160px 0;
   transform-origin: left;
   transition: background-color 400ms cubic-bezier(1, 0, 0.4, 1),
     box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
